@@ -1,7 +1,7 @@
 # Email Microservice
 
 This microservice send an email using the [AWS SES](https://aws.amazon.com/pt/ses/).
-Tecnologias utilizadas: Java, Java Spring, AWS.
+Technologies used: Java, Java Spring, AWS.
 
 - [Installation](#installation)
 - [Configuration](#configuration)
@@ -35,6 +35,7 @@ mvn spring-boot:run
 2. The API will be accessible at http://localhost:8080
 
 3. Postman request
+
 ![img_1.png](assets/img/img_1.png)
 
 ## Documentation
