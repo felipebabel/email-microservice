@@ -1,5 +1,6 @@
 package com.emailmicroservice.core.exception;
 
+import com.amazonaws.SdkClientException;
 import com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException;
 import com.amazonaws.services.simpleemail.model.MessageRejectedException;
 import com.emailmicroservice.core.constant.Messages;
@@ -26,6 +27,11 @@ public class EmailExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(MessageRejectedException.class)
     public ResponseEntity<DefaultResponse> handleEmailVerificationError(final MessageRejectedException ex) {
         return new ResponseEntity<>(new DefaultResponse(DefaultResponse.ERROR, Messages.MSG_INVALID_CREDENTIALS), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(SdkClientException.class)
+    public ResponseEntity<DefaultResponse> handleSdkClientException(final SdkClientException ex) {
+        return new ResponseEntity<>(new DefaultResponse(DefaultResponse.ERROR, Messages.MSG_NETWORK), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }

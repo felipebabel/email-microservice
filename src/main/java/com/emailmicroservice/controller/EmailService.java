@@ -35,10 +35,19 @@ public interface EmailService {
                             value = Messages.ERROR_MESSAGE),
                         @ExampleObject(
                             name = "Status 2, Error",
+                            value = Messages.ERROR_FIELD_ID_NOT_INFORMED)})),
+            @ApiResponse(
+                responseCode = "500",
+                content = @Content(
+                    mediaType = "application/json",
+                    examples = {
+                        @ExampleObject(
+                            name = "Status 1, Error",
                             value = Messages.ERROR_INVALID_CREDENTIALS),
                         @ExampleObject(
-                            name = "Status 3, Error",
-                            value = Messages.ERROR_FIELD_ID_NOT_INFORMED)}))
+                            name = "Status 2, Error",
+                            value = Messages.ERROR_NETWORK)
+                    }))
         })
     ResponseEntity<DefaultResponse> sendEmail(@RequestBody EmailDto emailDto) throws EmailServiceException;
 
