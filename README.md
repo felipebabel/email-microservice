@@ -34,7 +34,7 @@ mvn spring-boot:run
 ```
 2. The API will be accessible at http://localhost:8080
 
-3. Postman request
+3. Postman request example:
 
 ![img_1.png](assets/img/img_1.png)
 
@@ -46,7 +46,6 @@ mvn spring-boot:run
 
 # TO DO LIST
 
-#### readme
 #### swagger api e no dto
 #### json return arrumar
 #### TESTES
