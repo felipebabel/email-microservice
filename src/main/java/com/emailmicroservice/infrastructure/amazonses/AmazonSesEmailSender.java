@@ -31,11 +31,7 @@ public class AmazonSesEmailSender implements EmailSenderGateway {
             .withDestination(new Destination().withToAddresses(emailDto.getTo()))
             .withMessage(new Message().withBody(new Body().withText(new Content(emailDto.getBody())))
                 .withSubject(new Content(emailDto.getSubject())));
-        try {
-            this.amazonSimpleEmailService.sendEmail(request);
-        } catch (AmazonServiceException e) {
-            throw new EmailServiceException("Error when send email");
-        }
+        this.amazonSimpleEmailService.sendEmail(request);
     }
 
 }
