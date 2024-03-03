@@ -1,28 +1,51 @@
-# email-microservice
+# Email Microservice
 
-#### Execute Microservice
+This microservice send an email using the [AWS SES](https://aws.amazon.com/pt/ses/).
+Tecnologias utilizadas: Java, Java Spring, AWS.
 
-To run the microservice, run task or run for the [EmailMicroserviceApplication.java](src/main/java/com/emailmicroservice/EmailMicroserviceApplication.java) file.
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Execute](#execute)
+- [Documentation](#documentation)
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/felipebabel/email-microservice.git
+```
+
+2. Install dependencies with Maven
+## Configuration
+In the [application.properties](src/main/resources/application.properties) file,
+it's necessary to change the fields aws.accessKeyId, aws.secretKey and aws.region for your AWS credentials.
+
+![img.png](assets/img/img.png)
+
+## Execute
+
+1. To run the microservice, run task or run for
+the [EmailMicroserviceApplication.java](src/main/java/com/emailmicroservice/EmailMicroserviceApplication.java) file.
+
 
 ```task
 mvn spring-boot:run
 ```
+2. The API will be accessible at http://localhost:8080
+
+3. Postman request
+![img_1.png](assets/img/img_1.png)
+
+## Documentation
+
+[Swagger UI](http://localhost:8080/swagger-ui/index.html#/)
+
+
 
 # TO DO LIST
-Swagger
-readme
-json return
-forma de primeiro configurar o AWS
 
-localhost:8080/api/email
-
-### JSON Example
-
-Here is a JSON example to send an e-mail.   
-
-```json
-{
-  "to": "yourEmail@email.com",
-  "subject": "your subject",
-  "body": "your body"
-}
+#### readme
+#### swagger api e no dto
+#### json return arrumar
+#### TESTES
