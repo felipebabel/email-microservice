@@ -1,8 +1,9 @@
 package com.emailmicroservice.controller;
 
 import com.emailmicroservice.application.EmailSenderService;
+import com.emailmicroservice.core.constant.Messages;
 import com.emailmicroservice.core.dto.EmailDto;
-import com.emailmicroservice.core.exception.EmailServiceException;
+import com.emailmicroservice.core.util.DefaultResponse;
 import com.emailmicroservice.infrastructure.amazonses.AmazonSesConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/email")
-public class EmailServiceController {
+public class EmailServiceController implements EmailService {
 
     private final EmailSenderService emailSenderService;
 
@@ -28,9 +29,14 @@ public class EmailServiceController {
     }
 
     @PostMapping
-    public ResponseEntity<String> sendEmail(@RequestBody EmailDto emailDto) throws EmailServiceException {
-        this.emailSenderService.sendEmail(emailDto);
-        return new ResponseEntity<>("Email sent successful", HttpStatus.OK);
+    public ResponseEntity<DefaultResponse> sendEmail(@RequestBody EmailDto emailDto) {
+        try {
+            this.emailSenderService.sendEmail(emailDto);
+            return new ResponseEntity<>(new DefaultResponse(DefaultResponse.SUCESS, Messages.MSG_EMAIL_SENT_SUCCESSFUL), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new DefaultResponse(DefaultResponse.ERROR, Messages.MSG_ERROR_WHEN_SEND_EMAIL), HttpStatus.BAD_REQUEST);
+        }
+
     }
 
 }
