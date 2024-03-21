@@ -23,6 +23,8 @@ it's necessary to change the fields aws.accessKeyId, aws.secretKey and aws.regio
 
 ![img.png](assets/img/img.png)
 
+Prerequisite: JAVA 17
+
 ## Execute
 
 1. To run the microservice, run task or run for

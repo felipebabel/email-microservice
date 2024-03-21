@@ -9,10 +9,9 @@ import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import com.emailmicroservice.core.dto.EmailDto;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-public interface EmailService {
+public interface EmailServiceAPI {
 
     @Operation(
         summary = "Send Email",

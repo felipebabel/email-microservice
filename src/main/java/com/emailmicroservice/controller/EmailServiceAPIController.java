@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/email")
-public class EmailServiceController implements EmailService {
+public class EmailServiceAPIController implements EmailServiceAPI {
 
     private final EmailSenderService emailSenderService;
 
     private final AmazonSesConfiguration amazonSesConfiguration;
 
     @Autowired
-    public EmailServiceController(final EmailSenderService emailSenderService,
-                                  final AmazonSesConfiguration amazonSesConfiguration) {
+    public EmailServiceAPIController(final EmailSenderService emailSenderService,
+                                     final AmazonSesConfiguration amazonSesConfiguration) {
         this.emailSenderService = emailSenderService;
         this.amazonSesConfiguration = amazonSesConfiguration;
     }
