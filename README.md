@@ -21,11 +21,11 @@ git clone https://github.com/felipebabel/email-microservice.git
 
 1. It's necessary to install the Lombok Plugin in settings.
 
-![img.png](img.png)
+![img.png](assets/img/img1.png)
 
 2. It's necessary to add your AWS credentials in the environment variables.
 
-![img_2.png](img_2.png)
+![img_2.png](assets/img/img2.png)
 
 3. Prerequisite: JAVA 17
 
@@ -42,7 +42,7 @@ mvn spring-boot:run
 
 3. Postman request example:
 
-![img_1.png](assets/img/img_1.png)
+![img_1.png](assets/img/img3.png)
 
 ## Documentation
 
