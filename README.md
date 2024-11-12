@@ -25,7 +25,7 @@ git clone https://github.com/felipebabel/email-microservice.git
 
 2. It's necessary to add your AWS credentials in the environment variables.
 
-![img_5.png](img_5.png)
+![img_2.png](img_2.png)
 
 3. Prerequisite: JAVA 17
 
