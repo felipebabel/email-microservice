@@ -18,12 +18,15 @@ git clone https://github.com/felipebabel/email-microservice.git
 
 2. Install dependencies with Maven
 ## Configuration
-In the [application.properties](src/main/resources/application.properties) file,
-it's necessary to change the fields aws.accessKeyId, aws.secretKey and aws.region for your AWS credentials.
 
-![img.png](assets/img/img.png)
+1. It's necessary to install the Lombok Plugin in settings.
 
-Prerequisite: JAVA 17
+![img.png](img.png)
+2. It's necessary to add your AWS credentials in the environment variables.
+
+![img_5.png](img_5.png)
+
+3. Prerequisite: JAVA 17
 
 ## Execute
 
