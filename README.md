@@ -22,6 +22,7 @@ git clone https://github.com/felipebabel/email-microservice.git
 1. It's necessary to install the Lombok Plugin in settings.
 
 ![img.png](img.png)
+
 2. It's necessary to add your AWS credentials in the environment variables.
 
 ![img_5.png](img_5.png)
