@@ -1,3 +1,5 @@
+server:
+    port: 8080
 aws:
     accessKeyId: ${YOUR_ACESS_KEY_ID}
     secretKey: ${YOUR_SECREY_KEY}
