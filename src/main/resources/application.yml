@@ -6,4 +6,3 @@ aws:
     region: ${YOUR_REGION}
 
 
-
