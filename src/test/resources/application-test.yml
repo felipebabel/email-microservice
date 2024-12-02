@@ -1,0 +1,6 @@
+server:
+  port: 8080
+aws:
+  accessKeyId: test
+  secretKey: test
+  region: test
