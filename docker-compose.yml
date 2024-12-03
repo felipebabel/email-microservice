@@ -8,4 +8,4 @@ services:
       - YOUR_SECREY_KEY=your_actual_secret_access_key
       - YOUR_REGION=your_actual_region
     ports:
-      - "8080:8080"  # Example port mapping; change as needed
+      - "8080:8080"

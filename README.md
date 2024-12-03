@@ -1,13 +1,14 @@
 # Email Microservice
 
+---
 This microservice send an email using the [AWS SES](https://aws.amazon.com/pt/ses/).
-Technologies used: Java, Java Spring, AWS.
+Technologies used: Java 17, Java Spring, AWS.
 
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Execute](#execute)
 - [Documentation](#documentation)
-
+---
 ## Installation
 
 1. Clone the repository:
@@ -17,6 +18,10 @@ git clone https://github.com/felipebabel/email-microservice.git
 ```
 
 2. Install dependencies with Maven
+```bash
+mvn clean install
+```
+---
 ## Configuration
 
 1. It's necessary to install the Lombok Plugin in settings.
@@ -27,23 +32,38 @@ git clone https://github.com/felipebabel/email-microservice.git
 
 ![img_2.png](assets/img/img2.png)
 
-3. Prerequisite: JAVA 17
+3. Java 17 must be installed and configured on your machine
 
+---
 ## Execute
-
-1. To run the microservice, run task or run for
-the [EmailMicroserviceApplication.java](src/main/java/com/emailmicroservice/EmailMicroserviceApplication.java) file.
-
-
-```task
+To run the microservice, you can either use the following Maven command
+```bash
 mvn spring-boot:run
 ```
-2. The API will be accessible at http://localhost:8080
+Or run the main class directly from your IDE:
+[EmailMicroserviceApplication.java](src/main/java/com/emailmicroservice/EmailMicroserviceApplication.java)
 
-3. Postman request example:
+The API will be accessible at http://localhost:8080
+
+Postman request example:
 
 ![img_1.png](assets/img/img3.png)
 
+---
+## Docker
+The microservice can also be containerized and run using Docker.
+
+Command to run the Docker container:
+```bash
+docker-compose up --build 
+```
+In the file [docker-compose.yml](docker-compose.yml), update the environment variables with your AWS credentials.
+Example section:
+
+![img_1.png](img_1.png)
+---
 ## Documentation
 
+Interactive API documentation is available via Swagger UI.
+Access it here:
 [Swagger UI](http://localhost:8080/swagger-ui/index.html#/)
