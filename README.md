@@ -7,6 +7,7 @@ Technologies used: Java 17, Java Spring, AWS.
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Execute](#execute)
+- [Docker](#docker)
 - [Documentation](#documentation)
 ---
 ## Installation
@@ -37,7 +38,7 @@ mvn clean install
 ---
 ## Execute
 To run the microservice, you can either use the following Maven command
-```bash
+```task
 mvn spring-boot:run
 ```
 Or run the main class directly from your IDE:
