@@ -61,7 +61,7 @@ docker-compose up --build
 In the file [docker-compose.yml](docker-compose.yml), update the environment variables with your AWS credentials.
 Example section:
 
-![img_1.png](img_1.png)
+![img_1.png](assets/img/img4.png)
 ---
 ## Documentation
 
