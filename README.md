@@ -27,11 +27,11 @@ mvn clean install
 
 1. It's necessary to install the Lombok Plugin in settings.
 
-![img.png](assets/img/img1.png)
+![img.png](assets/img1.png)
 
 2. It's necessary to add your AWS credentials in the environment variables.
 
-![img_2.png](assets/img/img2.png)
+![img_2.png](assets/img2.png)
 
 3. Java 17 must be installed and configured on your machine
 
@@ -48,7 +48,7 @@ The API will be accessible at http://localhost:8080
 
 Postman request example:
 
-![img_1.png](assets/img/img3.png)
+![img_1.png](assets/img3.png)
 
 ---
 ## Docker
@@ -61,7 +61,7 @@ docker-compose up --build
 In the file [docker-compose.yml](docker-compose.yml), update the environment variables with your AWS credentials.
 Example section:
 
-![img_1.png](assets/img/img4.png)
+![img_1.png](assets/img4.png)
 ---
 ## Documentation
 
