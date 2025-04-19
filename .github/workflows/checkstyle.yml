@@ -62,4 +62,5 @@ jobs:
           reporter: github-pr-review
           checkstyle_config: target/checkstyle-result.xml
           level: error
+          checkstyle_report: target/checkstyle-reports/checkstyle-report.xml
 
