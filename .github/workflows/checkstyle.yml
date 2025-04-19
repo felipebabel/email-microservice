@@ -56,7 +56,7 @@ jobs:
           fi
 
       - name: Checkstyle Report with Reviewdog
-        uses: reviewdog/action-checkstyle@v1
+        uses: reviewdog/action-checkstyle@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
