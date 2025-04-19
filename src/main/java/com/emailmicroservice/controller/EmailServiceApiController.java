@@ -23,17 +23,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v2/email")
 public class EmailServiceApiController implements EmailServiceApi {
 
-    private final EmailSenderService emailSenderService;
-
-    private final EmailSenderWithPdfService emailSenderWithPdfService;
-
-    private final AmazonSesConfiguration amazonSesConfiguration;
-
     static final Logger LOGGER = LoggerFactory.getLogger("EmailServiceAPIController");
+    private final EmailSenderService emailSenderService;
+    private final EmailSenderWithPdfService emailSenderWithPdfService;
+    private final AmazonSesConfiguration amazonSesConfiguration;
 
 
     @Autowired
-    public EmailServiceApiController(final EmailSenderService emailSenderService, EmailSenderWithPdfService emailSenderWithPdfService,
+    public EmailServiceApiController(final EmailSenderService emailSenderService,
+                                     EmailSenderWithPdfService emailSenderWithPdfService,
                                      final AmazonSesConfiguration amazonSesConfiguration) {
         this.emailSenderService = emailSenderService;
         this.emailSenderWithPdfService = emailSenderWithPdfService;
@@ -41,24 +39,28 @@ public class EmailServiceApiController implements EmailServiceApi {
     }
 
     @PostMapping(
-        consumes = MediaType.APPLICATION_JSON_VALUE,
-        produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<DefaultResponse> sendEmail(@RequestBody EmailDto emailDto) throws EmailServiceException {
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<DefaultResponse> sendEmail(@RequestBody EmailDto emailDto)
+            throws EmailServiceException {
         LOGGER.info("Sending email");
         this.emailSenderService.sendEmail(emailDto);
         LOGGER.info("Sent email");
-        return new ResponseEntity<>(new DefaultResponse(DefaultResponse.SUCESS, Messages.MSG_EMAIL_SENT_SUCCESSFUL), HttpStatus.OK);
+        return new ResponseEntity<>(new DefaultResponse(DefaultResponse.SUCESS,
+                Messages.MSG_EMAIL_SENT_SUCCESSFUL), HttpStatus.OK);
     }
 
     @PostMapping(
             value = "/pdf",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<DefaultResponse> sendEmailWithPdf(@RequestBody EmailBaseDto emailBaseDto) throws EmailServiceException {
+    public ResponseEntity<DefaultResponse> sendEmailWithPdf(@RequestBody EmailBaseDto emailBaseDto)
+            throws EmailServiceException {
         LOGGER.info("Sending email with PDF");
         this.emailSenderWithPdfService.sendEmailWithPdf(emailBaseDto);
         LOGGER.info("Sent email");
-        return new ResponseEntity<>(new DefaultResponse(DefaultResponse.SUCESS, Messages.MSG_EMAIL_SENT_SUCCESSFUL), HttpStatus.OK);
+        return new ResponseEntity<>(new DefaultResponse(DefaultResponse.SUCESS,
+                Messages.MSG_EMAIL_SENT_SUCCESSFUL), HttpStatus.OK);
     }
 
 }

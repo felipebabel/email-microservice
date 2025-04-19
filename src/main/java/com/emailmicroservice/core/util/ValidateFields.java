@@ -1,19 +1,19 @@
 package com.emailmicroservice.core.util;
 
+import java.util.Objects;
+import lombok.experimental.UtilityClass;
 import com.emailmicroservice.core.constant.Messages;
 import com.emailmicroservice.core.dto.EmailBaseDto;
 import com.emailmicroservice.core.dto.EmailDto;
 import com.emailmicroservice.core.exception.EmailServiceException;
-import java.util.Objects;
-import lombok.experimental.UtilityClass;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @UtilityClass
 public class ValidateFields {
 
-    static final Logger LOGGER = LoggerFactory.getLogger("ValidateFields");
     public static final String VALIDATING_REQUIRED_FIELD = "Validating required field";
+    static final Logger LOGGER = LoggerFactory.getLogger("ValidateFields");
 
     public void validate(final EmailDto emailDto) throws EmailServiceException {
         LOGGER.info(VALIDATING_REQUIRED_FIELD);
