@@ -31,3 +31,17 @@ jobs:
       - name: Run Maven Checkstyle
         run: mvn clean verify
 
+      - name: Upload Checkstyle report
+        uses: actions/upload-artifact@v2
+        with:
+          name: checkstyle-report
+          path: target/checkstyle-*.xml
+
+      - name: Check for Checkstyle violations
+        run: |
+          if grep -q "Checkstyle violation" target/checkstyle-*.xml; then
+            echo "Checkstyle violations found!";
+            exit 1;
+          else
+            echo "No Checkstyle violations found";
+          fi
