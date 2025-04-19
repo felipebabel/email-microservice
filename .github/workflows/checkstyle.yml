@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '17'
-          distribution: 'temurin' # 'adoptopenjdk' foi descontinuado
+          distribution: 'temurin'
 
       - name: Cache Maven dependencies
         uses: actions/cache@v3
@@ -31,10 +31,19 @@ jobs:
       - name: Run Maven Checkstyle
         run: mvn clean verify
 
-      - name: Upload Checkstyle report
+      - name: Generate Checkstyle Report (HTML)
+        run: mvn checkstyle:checkstyle
+
+      - name: Upload Checkstyle HTML report
         uses: actions/upload-artifact@v4
         with:
-          name: checkstyle-report
+          name: checkstyle-report-html
+          path: target/site/checkstyle.html
+
+      - name: Upload Checkstyle XML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkstyle-report-xml
           path: target/checkstyle-*.xml
 
       - name: Check for Checkstyle violations
@@ -45,3 +54,8 @@ jobs:
           else
             echo "No Checkstyle violations found";
           fi
+
+      - name: Add Checkstyle comments to PR
+        uses: gradle/wrapper-validation-action@v1
+        with:
+          checkstyle-report: target/checkstyle-*.xml

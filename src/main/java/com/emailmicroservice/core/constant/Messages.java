@@ -23,18 +23,19 @@ public class Messages {
     public static final String END_MESSAGE = "\" }";
 
     public static final String MSG_INVALID_CREDENTIALS = "Error sending email:"
-            + " Please check your AWS Secret Access Key, region, accessKeyId and check the identitys in the " +
-            "Amazon SES.";
+            + " Please check your AWS Secret Access Key, region, accessKeyId and check the identitys in the "
+            + "Amazon SES.";
 
     public static final String MSG_NETWORK = "Error sending email: "
-            + "There was a problem connecting to the email server. Please check your internet connection and " +
-            "try again.";
+            + "There was a problem connecting to the email server. Please check your internet connection and "
+            + "try again.";
 
     public static final String SUCCESS_MESSAGE = SUCCESS_MSG + MSG_EMAIL_SENT_SUCCESSFUL + END_MESSAGE;
 
     public static final String ERROR_MESSAGE = ERROR_MSG + MSG_ERROR_WHEN_SEND_EMAIL + END_MESSAGE;
 
-    public static final String ERROR_FIELD_ID_NOT_INFORMED = ERROR_MSG + "[field] not informed." + END_MESSAGE;
+    public static final String ERROR_FIELD_ID_NOT_INFORMED = ERROR_MSG + "[field] not informed."
+            + END_MESSAGE;
 
     public static final String ERROR_INVALID_CREDENTIALS = ERROR_MSG + MSG_INVALID_CREDENTIALS + END_MESSAGE;
 
