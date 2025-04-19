@@ -1,6 +1,5 @@
 package com.emailmicroservice.infrastructure.amazonses;
 
-import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.model.Body;
 import com.amazonaws.services.simpleemail.model.Content;
