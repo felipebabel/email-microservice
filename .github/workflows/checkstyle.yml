@@ -60,6 +60,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
-          checkstyle_config: target/checkstyle-reports/checkstyle-report.xml
+          checkstyle_config: target/checkstyle-result.xml
           level: error
 
