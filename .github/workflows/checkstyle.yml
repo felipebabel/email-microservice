@@ -50,12 +50,12 @@ jobs:
         run: |
           if grep -q "Checkstyle violation" target/checkstyle-*.xml; then
             echo "Checkstyle violations found!";
-            exit 1;
+            exit 1; 
           else
             echo "No Checkstyle violations found";
           fi
 
       - name: Add Checkstyle comments to PR
-        uses: gradle/wrapper-validation-action@v1
+        uses: checkstyle-action@v1.2
         with:
           checkstyle-report: target/checkstyle-*.xml
