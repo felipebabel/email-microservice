@@ -54,7 +54,8 @@ public class AmazonSesEmailSenderWithPdf implements EmailSenderPdfGateway {
             amazonSimpleEmailService.sendRawEmail(rawEmailRequest);
 
         } catch (Exception e) {
-            throw new EmailServiceException("Error while sending email with PDF: " + e.getMessage());
+            throw new EmailServiceException("Error while sending email with PDF: "
+                    + e.getMessage());
         }
     }
 
@@ -97,8 +98,10 @@ public class AmazonSesEmailSenderWithPdf implements EmailSenderPdfGateway {
             Document document = new Document(pdfDoc);
 
             document.add(new Paragraph("Random Report"));
-            document.add(new Paragraph("Generated at: " + java.time.LocalDateTime.now()));
-            document.add(new Paragraph("Random number: " + Math.random()));
+            document.add(new Paragraph("Generated at: "
+                    + java.time.LocalDateTime.now()));
+            document.add(new Paragraph("Random number: "
+                    + Math.random()));
 
             document.close();
             LOGGER.info("Random PDF generated");

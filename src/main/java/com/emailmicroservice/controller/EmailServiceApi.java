@@ -17,8 +17,8 @@ public interface EmailServiceApi {
 
     @Operation(
             summary = "Send an email",
-            description = "This endpoint sends an email using the provided recipient, subject, body. " +
-                    "Ensure all required fields are provided for successful email delivery.",
+            description = "This endpoint sends an email using the provided recipient, subject, body. "
+                    + "Ensure all required fields are provided for successful email delivery.",
             responses = {
                     @ApiResponse(
                             responseCode = "200",
@@ -55,8 +55,8 @@ public interface EmailServiceApi {
 
     @Operation(
             summary = "Send an email with random PDF",
-            description = "This endpoint sends an email using the provided recipient, subject and a random " +
-                    "PDF. Ensure all required fields are provided for successful email delivery.",
+            description = "This endpoint sends an email using the provided recipient, subject and a random "
+                    + "PDF. Ensure all required fields are provided for successful email delivery.",
             responses = {
                     @ApiResponse(
                             responseCode = "200",
