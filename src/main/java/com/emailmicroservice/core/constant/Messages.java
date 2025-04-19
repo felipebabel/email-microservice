@@ -23,10 +23,12 @@ public class Messages {
     public static final String END_MESSAGE = "\" }";
 
     public static final String MSG_INVALID_CREDENTIALS = "Error sending email:"
-        + " Please check your AWS Secret Access Key, region, accessKeyId and check the identitys in the Amazon SES.";
+            + " Please check your AWS Secret Access Key, region, accessKeyId and check the identitys in the " +
+            "Amazon SES.";
 
     public static final String MSG_NETWORK = "Error sending email: "
-        + "There was a problem connecting to the email server. Please check your internet connection and try again.";
+            + "There was a problem connecting to the email server. Please check your internet connection and " +
+            "try again.";
 
     public static final String SUCCESS_MESSAGE = SUCCESS_MSG + MSG_EMAIL_SENT_SUCCESSFUL + END_MESSAGE;
 

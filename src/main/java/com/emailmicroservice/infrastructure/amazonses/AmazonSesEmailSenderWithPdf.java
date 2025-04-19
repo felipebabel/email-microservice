@@ -1,17 +1,11 @@
 package com.emailmicroservice.infrastructure.amazonses;
 
-import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
-import com.amazonaws.services.simpleemail.model.*;
-import com.emailmicroservice.adapters.EmailSenderPdfGateway;
-import com.emailmicroservice.core.dto.EmailBaseDto;
-import com.emailmicroservice.core.exception.EmailServiceException;
-import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.layout.Document;
-import jakarta.mail.Message;
-import com.itextpdf.layout.element.Paragraph;
+import java.io.ByteArrayOutputStream;
+import java.nio.ByteBuffer;
+import java.util.Properties;
 import jakarta.activation.DataHandler;
 import jakarta.activation.DataSource;
+import jakarta.mail.Message;
 import jakarta.mail.Multipart;
 import jakarta.mail.Session;
 import jakarta.mail.internet.InternetAddress;
@@ -19,21 +13,27 @@ import jakarta.mail.internet.MimeBodyPart;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
 import jakarta.mail.util.ByteArrayDataSource;
+import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
+import com.amazonaws.services.simpleemail.model.RawMessage;
+import com.amazonaws.services.simpleemail.model.SendRawEmailRequest;
+import com.emailmicroservice.adapters.EmailSenderPdfGateway;
+import com.emailmicroservice.core.dto.EmailBaseDto;
+import com.emailmicroservice.core.exception.EmailServiceException;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.ByteArrayOutputStream;
-import java.nio.ByteBuffer;
-import java.util.Properties;
 
 @Service
 public class AmazonSesEmailSenderWithPdf implements EmailSenderPdfGateway {
 
-    private final AmazonSimpleEmailService amazonSimpleEmailService;
-
     static final Logger LOGGER = LoggerFactory.getLogger("AmazonSesEmailSenderWithPdf");
+    private final AmazonSimpleEmailService amazonSimpleEmailService;
 
     @Autowired
     public AmazonSesEmailSenderWithPdf(final AmazonSimpleEmailService amazonSimpleEmailService) {
@@ -85,7 +85,7 @@ public class AmazonSesEmailSenderWithPdf implements EmailSenderPdfGateway {
 
         message.setContent(multipart);
 
-        return message; //dsa
+        return message; //d
     }
 
 

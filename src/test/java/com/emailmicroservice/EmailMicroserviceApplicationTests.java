@@ -10,8 +10,8 @@ import org.springframework.test.context.ContextConfiguration;
 @ContextConfiguration(classes = EmailMicroserviceApplication.class)
 class EmailMicroserviceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }

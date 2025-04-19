@@ -27,9 +27,9 @@ public class AmazonSesEmailSender implements EmailSenderGateway {
                             EmailDto emailDto) throws EmailServiceException {
         final SendEmailRequest request = new SendEmailRequest();
         request.withSource(emailDto.getFrom())
-            .withDestination(new Destination().withToAddresses(emailDto.getTo()))
-            .withMessage(new Message().withBody(new Body().withText(new Content(emailDto.getBody())))
-                .withSubject(new Content(emailDto.getSubject())));
+                .withDestination(new Destination().withToAddresses(emailDto.getTo()))
+                .withMessage(new Message().withBody(new Body().withText(new Content(emailDto.getBody())))
+                        .withSubject(new Content(emailDto.getSubject())));
         this.amazonSimpleEmailService.sendEmail(request);
     }
 
