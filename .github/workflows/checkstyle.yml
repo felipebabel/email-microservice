@@ -56,6 +56,6 @@ jobs:
           fi
 
       - name: Add Checkstyle comments to PR
-        uses: checkstyle-action@v1.2
+        uses: gradle/wrapper-validation-action@v1
         with:
           checkstyle-report: target/checkstyle-*.xml
