@@ -55,7 +55,10 @@ jobs:
             echo "No Checkstyle violations found";
           fi
 
-      - name: Add Checkstyle comments to PR
-        uses: gradle/wrapper-validation-action@v1
+      - name: Checkstyle Report with Reviewdog
+        uses: reviewdog/action-checkstyle@v1
         with:
-          checkstyle-report: target/checkstyle-*.xml
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          checkstyle_reporter_input: target/checkstyle-reports/checkstyle-report.xml
+
