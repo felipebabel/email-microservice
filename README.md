@@ -82,3 +82,5 @@ Example section:
 Interactive API documentation is available via Swagger UI.
 Access it here:
 [Swagger UI](http://localhost:8080/swagger-ui/index.html#/)
+
+TODO readme do pdf

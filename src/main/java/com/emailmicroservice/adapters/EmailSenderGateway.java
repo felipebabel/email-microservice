@@ -7,5 +7,4 @@ public interface EmailSenderGateway {
 
     void senderEmail(final
                      EmailDto emailDto) throws EmailServiceException;
-
 }
