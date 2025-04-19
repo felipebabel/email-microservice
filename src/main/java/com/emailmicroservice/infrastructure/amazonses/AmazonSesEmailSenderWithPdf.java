@@ -85,7 +85,7 @@ public class AmazonSesEmailSenderWithPdf implements EmailSenderPdfGateway {
 
         message.setContent(multipart);
 
-        return message;
+        return message; // teste github actions
     }
 
 
