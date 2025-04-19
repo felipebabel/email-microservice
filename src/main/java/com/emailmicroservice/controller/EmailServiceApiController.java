@@ -54,8 +54,8 @@ public class EmailServiceApiController implements EmailServiceApi {
             value = "/pdf",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<DefaultResponse> sendEmailWithPdf(@RequestBody EmailBaseDto emailBaseDto)
-            throws EmailServiceException {
+    public ResponseEntity<DefaultResponse> sendEmailWithPdf(@RequestBody EmailBaseDto emailBaseDto) throws
+            EmailServiceException {
         LOGGER.info("Sending email with PDF");
         this.emailSenderWithPdfService.sendEmailWithPdf(emailBaseDto);
         LOGGER.info("Sent email");

@@ -28,7 +28,7 @@ public class AmazonSesConfiguration {
         return AmazonSimpleEmailServiceClientBuilder.standard()
                 .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(awsAccessKeyId,
                         awsSecretKey)))
-                .withRegion(awsRegion).build();
+                .withRegion(awsRegion).build(); // test
     }
 
 }
