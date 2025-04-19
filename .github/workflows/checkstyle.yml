@@ -56,9 +56,10 @@ jobs:
           fi
 
       - name: Checkstyle Report with Reviewdog
-        uses: reviewdog/action-checkstyle@master
+        uses: dbelyaev/action-checkstyle@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
-          checkstyle_reporter_input: target/checkstyle-reports/checkstyle-report.xml
+          checkstyle_config: target/checkstyle-reports/checkstyle-report.xml
+          level: error
 
