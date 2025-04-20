@@ -11,8 +11,6 @@
   <img src="https://img.shields.io/badge/Coverage-%3E=80%25-blueviolet" />
 </p>
 
----
-
 # ✉️ Email Microservice
 
 This microservice sends emails using [AWS SES](https://aws.amazon.com/ses/), with two main features:
@@ -21,8 +19,6 @@ This microservice sends emails using [AWS SES](https://aws.amazon.com/ses/), wit
 - 📎 Generates and sends **random PDF attachments**
 
 Ready to run via **Docker** or **Maven**, with code quality ensured by **Checkstyle** and **JaCoCo test coverage ≥ 80%**.
-
----
 
 
 ## 🎥 Demo
@@ -35,7 +31,6 @@ This demo shows:
 
 * Sending an email via Swagger UI
 
----
 
 ## 🐳 Docker
 
@@ -48,8 +43,6 @@ docker-compose up --build
 🔐 Don't forget to update your AWS credentials in
 [docker-compose.yml](docker-compose.yml)
 
-
----
 
 ## ⚙️ Manual Setup
 
@@ -64,7 +57,6 @@ Install dependencies with Maven
 ```bash
 mvn clean install
 ```
----
 
 ## 🔧 Configuration
 
@@ -76,14 +68,12 @@ Set your AWS credentials as environment variables:
 
 ![img_2.png](assets/img/img2.png)
 
-
 Ensure Java 21 is installed and set as default:
 
 ```bash
 java -version
 ```
 
----
 
 ## ▶️ Running with Maven
 You can run the application with:
@@ -97,24 +87,17 @@ Or run the main class directly from your IDE:
 
 The API will be available at:
 
-
 📎 http://localhost:8080
 
-
----
-
-# 📬 Available Endpoints
+## 📬 Available Endpoints
 
 * POST /send-email: Sends a plain email
-
-
 * POST /send-random-pdf: Generates and sends an email with a random PDF attachment
 
 Postman example:
 
 ![img_1.png](assets/img/img3.png)
 
----
 
 ## 📑 API Documentation
 
@@ -124,15 +107,11 @@ Interactive API docs are available via Swagger:
 
 ✅ Same URL when running via Docker
 
----
-
 ## 📁 Reports
 
 [Checkstyle Result](target/checkstyle-reports/checkstyle-report.xml)
 
 [JaCoCo test coverage](target/site/jacoco/jacoco.xml)
-
----
 
 
 ## 🧰 Tech Stack
@@ -150,8 +129,6 @@ Interactive API docs are available via Swagger:
 * JaCoCo (≥ 80% coverage)
 
 * Checkstyle (fully passing)
-
----
 
 ## 🤝 Contributing
 Pull requests are welcome! Feel free to open issues for bugs, suggestions, or improvements.
