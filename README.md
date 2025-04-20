@@ -1,50 +1,90 @@
-# Email Microservice
+<p align="center">
+  <img src="assets/banner/banner.svg" alt="Email Microservice Banner">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-21-blue?logo=java" />
+  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?logo=springboot" />
+  <img src="https://img.shields.io/badge/AWS_SES-232F3E?logo=amazon-aws&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-ready-blue?logo=docker" />
+  <img src="https://img.shields.io/badge/Checkstyle-passed-brightgreen" />
+  <img src="https://img.shields.io/badge/Coverage-%3E=80%25-blueviolet" />
+</p>
 
 ---
-This microservice send an email using the [AWS SES](https://aws.amazon.com/pt/ses/).
-Technologies used: Java 17, Java Spring, AWS.
 
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Execute](#execute)
-- [Docker](#docker)
-- [Documentation](#documentation)
+# ✉️ Email Microservice
+
+This microservice sends emails using [AWS SES](https://aws.amazon.com/ses/), with two main features:
+
+- ✅ Simple email sending via API
+- 📎 Generates and sends **random PDF attachments**
+
+Ready to run via **Docker** or **Maven**, with code quality ensured by **Checkstyle** and **JaCoCo test coverage ≥ 80%**.
 
 ---
 
-## Installation
 
-1. Clone the repository:
+## 🎥 Demo
+<p align="center"> <img src="assets/gif/gif.gif" alt="Demo" width="700"> </p>
+This demo shows:
+
+* Maven installation
+
+* Docker startup
+
+* Sending an email via Swagger UI
+
+---
+
+## 🐳 Docker
+
+The fastest way to get the project up and running:
+
+```bash
+docker-compose up --build
+```
+
+🔐 Don't forget to update your AWS credentials in docker-compose.yml.
+
+---
+
+## ⚙️ Manual Setup
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/felipebabel/email-microservice.git
 ```
 
-2. Install dependencies with Maven
+Install dependencies with Maven
 
 ```bash
 mvn clean install
 ```
+---
+
+## 🔧 Configuration
+
+Install the Lombok plugin in your IDE:
+
+![img.png](assets/img/img1.png)
+
+Set your AWS credentials as environment variables:
+
+![img_2.png](assets/img/img2.png)
+
+
+Ensure Java 21 is installed and set as default:
+
+```bash
+java -version
+```
 
 ---
 
-## Configuration
-
-1. It's necessary to install the Lombok Plugin in settings.
-
-![img.png](assets/img1.png)
-
-2. It's necessary to add your AWS credentials in the environment variables.
-
-![img_2.png](assets/img2.png)
-
-3. Java 17 must be installed and configured on your machine
-
----
-
-## Execute
-
-To run the microservice, you can either use the following Maven command
+## ▶️ Running with Maven
+You can run the application with:
 
 ```task
 mvn spring-boot:run
@@ -53,34 +93,62 @@ mvn spring-boot:run
 Or run the main class directly from your IDE:
 [EmailMicroserviceApplication.java](src/main/java/com/emailmicroservice/EmailMicroserviceApplication.java)
 
-The API will be accessible at http://localhost:8080
+The API will be available at:
 
-Postman request example:
 
-![img_1.png](assets/img3.png)
+📎 http://localhost:8080
+
 
 ---
 
-## Docker
+## 📬 Available Endpoints
 
-The microservice can also be containerized and run using Docker.
+POST /send-email: Sends a plain email
 
-Command to run the Docker container:
+POST /send-random-pdf: Generates and sends an email with a random PDF attachment
 
-```bash
-docker-compose up --build 
-```
+Postman example:
 
-In the file [docker-compose.yml](docker-compose.yml), update the environment variables with your AWS credentials.
-Example section:
+![img_1.png](assets/img/img3.png)
 
-![img_1.png](assets/img4.png)
 ---
 
-## Documentation
+## 📑 API Documentation
 
-Interactive API documentation is available via Swagger UI.
-Access it here:
-[Swagger UI](http://localhost:8080/swagger-ui/index.html#/)
+Interactive API docs are available via Swagger:
 
-TODO readme do pdf
+📎 http://localhost:8080/swagger-ui/index.html#/
+
+✅ Same URL when running via Docker
+
+---
+
+## 📁 Reports
+
+[Checkstyle Result](target/checkstyle-reports/checkstyle-report.xml)
+
+[JaCoCo test coverage](target/site/jacoco/jacoco.xml)
+
+---
+
+
+## 🧰 Tech Stack
+
+* Java 21
+
+* Spring Boot
+
+* AWS SES
+
+* Docker
+
+* Maven
+
+* JaCoCo (≥ 80% coverage)
+
+* Checkstyle (fully passing)
+
+---
+
+## 🤝 Contributing
+Pull requests are welcome! Feel free to open issues for bugs, suggestions, or improvements.
