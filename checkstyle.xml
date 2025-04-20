@@ -10,7 +10,7 @@
 
     <module name="RegexpMultiline">
         <property name="format" value="&quot; \+"/>
-        <property name="message" value="Concatenação deve estar em nova linha."/>
+        <property name="message" value="String concatenation should be on a new line."/>
     </module>
 
     <module name="TreeWalker">
