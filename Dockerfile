@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk
+FROM openjdk:21-jdk
 RUN mkdir /emailms
 WORKDIR /emailms
 COPY target/*.jar /emailms/emailms.jar
