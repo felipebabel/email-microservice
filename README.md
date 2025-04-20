@@ -2,7 +2,7 @@
 
 ---
 This microservice send an email using the [AWS SES](https://aws.amazon.com/pt/ses/).
-Technologies used: Java 21, Java Spring, AWS.
+Technologies used: Java 17, Java Spring, AWS.
 
 - [Installation](#installation)
 - [Configuration](#configuration)

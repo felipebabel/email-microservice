@@ -28,14 +28,14 @@ public class ValidateFields {
         baseValidate(emailDto.getSubject(), emailDto.getTo(), emailDto.getFrom());
     }
 
-    private static void baseValidate(String subject, String to, String from) throws EmailServiceException {
-        if (Objects.isNull(subject)) {
+    private static void baseValidate(String emailDto, String emailDto1, String emailDto2) throws EmailServiceException {
+        if (Objects.isNull(emailDto)) {
             throw new EmailServiceException(Messages.MSG_FIELD_ID_NOT_INFORMED, Messages.FIELD_SUBJECT);
         }
-        if (Objects.isNull(to)) {
+        if (Objects.isNull(emailDto1)) {
             throw new EmailServiceException(Messages.MSG_FIELD_ID_NOT_INFORMED, Messages.FIELD_TO);
         }
-        if (Objects.isNull(from)) {
+        if (Objects.isNull(emailDto2)) {
             throw new EmailServiceException(Messages.MSG_FIELD_ID_NOT_INFORMED, Messages.FIELD_FROM);
         }
     }
