@@ -15,7 +15,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class EmailExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(EmailServiceException.class)
-    private ResponseEntity<DefaultResponse> emailExceptionHandler(final EmailServiceException exception) {
+    public ResponseEntity<DefaultResponse> emailExceptionHandler(final EmailServiceException exception) {
         return new ResponseEntity<>(new DefaultResponse(DefaultResponse.ERROR, exception.getMessage()),
                 HttpStatus.BAD_REQUEST);
     }
