@@ -45,7 +45,9 @@ The fastest way to get the project up and running:
 docker-compose up --build
 ```
 
-🔐 Don't forget to update your AWS credentials in docker-compose.yml.
+🔐 Don't forget to update your AWS credentials in
+[docker-compose.yml](docker-compose.yml)
+
 
 ---
 
@@ -101,11 +103,12 @@ The API will be available at:
 
 ---
 
-## 📬 Available Endpoints
+# 📬 Available Endpoints
 
-POST /send-email: Sends a plain email
+* POST /send-email: Sends a plain email
 
-POST /send-random-pdf: Generates and sends an email with a random PDF attachment
+
+* POST /send-random-pdf: Generates and sends an email with a random PDF attachment
 
 Postman example:
 
