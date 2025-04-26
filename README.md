@@ -22,7 +22,7 @@ Ready to run via **Docker** or **Maven**, with code quality ensured by **Checkst
 
 
 ## 🎥 Demo
-<p align="center"> <img src="assets/video/video.mp4" alt="Demo" width="700"> </p>
+<p align="center"> <img src="assets/gif/gif.gif" alt="Demo" width="700"> </p>
 This demo shows:
 
 * Maven installation
